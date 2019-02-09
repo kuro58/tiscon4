@@ -39,13 +39,14 @@
                             <tbody>
                             <tr>
                                 <td>
-                                    <label>お名前（漢字）</label>
+                                    <label>氏名（漢字)</label>
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例：ＴＩＳ　太郎</p>
+                                    <p>例) 苗字:山男<br/>　 名前:太郎</p>
                                     <div class="field" th:classappend="${errors.hasError('kanjiName')} ? 'error'">
-                                        <input type="text" name="kanjiName" th:value="${form.kanjiName}"/>
+                                        <input type="text" name="kanjiName" placeholder="苗字(漢字)" th:value="${form.kanjiName}"/>
+                                        <input type="text" name="kanjiName" placeholder="名前(漢字)" th:value="${form.kanjiname}"/>
                                         <p th:if="${errors.hasError('kanjiName')}"
                                            th:text="${errors.getMessage('kanjiName')}" class="error-message">
                                         </p>
@@ -54,13 +55,14 @@
                             </tr>
                             <tr>
                                 <td style="white-space: nowrap;">
-                                    <label>お名前（カタカナ）</label>
+                                    <label>氏名（カタカナ）</label>
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例：ティーアイエス　タロウ</p>
+                                    <p>例) 苗字:ヤマオ<br/>　名前タロウ</p>
                                     <div class="field" th:classappend="${errors.hasError('kanaName')} ? 'error'">
-                                        <input type="text" name="kanaName" th:value="${form.kanaName}"/>
+                                        <input type="text" name="kanaName" placeholder="苗字(カタカナ)" th:value="${form.kanaName}"/>
+                                        <input type="text" name="kanaName" placeholder="名前(カタカナ)" th:value="${form.kanaName}"/>
                                         <p th:if="${errors.hasError('kanaName')}"
                                            th:text="${errors.getMessage('kanaName')}" class="error-message">
                                         </p>
@@ -69,13 +71,14 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label>お名前（ローマ字）</label>
+                                    <label>氏名（全角ローマ字）</label>
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例：TIS TAROU</p>
+                                    <p>例) 苗字:YAMAO<br/> 　名前TAROU</p>
                                     <div class="field" th:classappend="${errors.hasError('alphabetName')} ? 'error'">
-                                        <input type="text" name="alphabetName" th:value="${form.alphabetName}"/>
+                                        <input type="text" name="alphabetName" placeholder="苗字（全角ローマ字)" th:value="${form.alphabetName}"/>
+                                        <input type="text" name="alphabetName" placeholder="名前（全角ローマ字)" th:value="${form.alphabetName}"/>
                                         <p th:if="${errors.hasError('alphabetName')}"
                                            th:text="${errors.getMessage('alphabetName')}" class="error-message">
                                         </p>
@@ -109,6 +112,7 @@
                                 <td>
                                     <p>例：1990/01/01</p>
                                     <div class="field" th:classappend="${errors.hasError('dateOfBirth')} ? 'error'">
+                                        <input type="text" name="dateOfBirth" th:value="${form.dateOfBirth}"/>
                                         <input type="text" name="dateOfBirth" th:value="${form.dateOfBirth}"/>
                                         <p th:if="${errors.hasError('dateOfBirth')}"
                                            th:text="${errors.getMessage('dateOfBirth')}" class="error-message">
@@ -149,7 +153,7 @@
                             <tr>
                                 <td>
                                     <label>自宅電話番号（半角）</label>
-                                    <p style="color:red;">＊</p>
+                                    <p style="color:red;"></p>
                                 </td>
                                 <td>
                                     <p>例：00-1111-2222</p>
