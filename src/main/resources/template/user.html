@@ -43,7 +43,7 @@
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例) 苗字:山男<br/>　 名前:太郎</p>
+                                    <p>例)山男　太郎</p>
                                     <div class="field" th:classappend="${errors.hasError('kanjiName')} ? 'error'">
                                         <input type="text" name="kanjiName" placeholder="苗字(漢字)" th:value="${form.kanjiName}"/>
                                         <input type="text" name="kanjiName" placeholder="名前(漢字)" th:value="${form.kanjiname}"/>
@@ -59,7 +59,7 @@
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例) 苗字:ヤマオ<br/>　名前タロウ</p>
+                                    <p>例) ヤマオ　タロウ</p>
                                     <div class="field" th:classappend="${errors.hasError('kanaName')} ? 'error'">
                                         <input type="text" name="kanaName" placeholder="苗字(カタカナ)" th:value="${form.kanaName}"/>
                                         <input type="text" name="kanaName" placeholder="名前(カタカナ)" th:value="${form.kanaName}"/>
@@ -75,7 +75,7 @@
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例) 苗字:YAMAO<br/> 　名前TAROU</p>
+                                    <p>例) YAMAO　TAROU</p>
                                     <div class="field" th:classappend="${errors.hasError('alphabetName')} ? 'error'">
                                         <input type="text" name="alphabetName" placeholder="苗字（全角ローマ字)" th:value="${form.alphabetName}"/>
                                         <input type="text" name="alphabetName" placeholder="名前（全角ローマ字)" th:value="${form.alphabetName}"/>
@@ -110,12 +110,14 @@
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例：1990/01/01</p>
+                                    <p>例：1990年12月08日</p>
                                     <div class="field" th:classappend="${errors.hasError('dateOfBirth')} ? 'error'">
-                                        <input type="text" name="dateOfBirth" th:value="${form.dateOfBirth}"/>
-                                        <input type="text" name="dateOfBirth" th:value="${form.dateOfBirth}"/>
+                                        <input type="text" name="dateOfBirth"placeholder="1990(半角)" th:value="${form.dateOfBirth}"/>年
+                                        <input type="text" name="dateOfBirth"placeholder="12(半角)" th:value="${form.dateOfBirth}"/>月
+                                        <input type="text" name="dateOfBirth"placeholder="08(半角)" th:value="${form.dateOfBirth}"/>日
                                         <p th:if="${errors.hasError('dateOfBirth')}"
                                            th:text="${errors.getMessage('dateOfBirth')}" class="error-message">
+                                            }
                                         </p>
                                     </div>
                                 </td>
@@ -126,13 +128,13 @@
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例：123-4567</p>
+                                    <p>例123-4567</p>
                                     <div class="field" th:classappend="${errors.hasError('zipCode')} ? 'error'">
-                                        <input type="text" class="zipcode" name="zipCode" th:value="${form.zipCode}"/>
+                                        <input type="text" class="zipcode" name="zipCode"placeholder="123(半角)" th:value="${form.zipCode}"/>
+                                        　<input type="text" class="zipcode" name="zipCode"placeholder="4567(半角)" th:value="${form.zipCode}"/>
                                         <p th:if="${errors.hasError('zipCode')}"
                                            th:text="${errors.getMessage('zipCode')}" class="error-message">
                                         </p>
-                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -141,9 +143,12 @@
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例：東京都新宿区西新宿８－１７－１</p>
+                                    <p>例)東京都新宿区<br/>
+                                        西新宿８－１７－１<br/>
+                                    </p>
                                     <div class="field" th:classappend="${errors.hasError('address')} ? 'error'">
-                                        <input type="text" name="address" th:value="${form.address}"/>
+                                        <input type="text" name="address"placeholder="都道府県市町村" th:value="${form.address}"/>
+                                        <input type="text" name="address" placeholder="それ以降の番地・アパート名等（全角)" th:value="${form.address}"/>
                                         <p th:if="${errors.hasError('address')}"
                                            th:text="${errors.getMessage('address')}" class="error-message">
                                         </p>
@@ -158,7 +163,7 @@
                                 <td>
                                     <p>例：00-1111-2222</p>
                                     <div class="field" th:classappend="${errors.hasError('homePhoneNumber')} ? 'error'">
-                                        <input type="text" name="homePhoneNumber" th:value="${form.homePhoneNumber}"/>
+                                        <input type="text" name="homePhoneNumber"placeholder="00-1111-2222(半角)" th:value="${form.homePhoneNumber}"/>
                                         <p th:if="${errors.hasError('homePhoneNumber')}"
                                            th:text="${errors.getMessage('homePhoneNumber')}" class="error-message">
                                         </p>
@@ -174,7 +179,7 @@
                                     <p>例：080-0000-0000</p>
                                     <div class="field"
                                          th:classappend="${errors.hasError('mobilePhoneNumber')} ? 'error'">
-                                        <input type="text" name="mobilePhoneNumber"
+                                        <input type="text" name="mobilePhoneNumber"placeholder="080-0000-0000(半角)"
                                                th:value="${form.mobilePhoneNumber}"/>
                                         <p th:if="${errors.hasError('mobilePhoneNumber')}"
                                            th:text="${errors.getMessage('mobilePhoneNumber')}" class="error-message">
@@ -190,7 +195,8 @@
                                 <td>
                                     <p>例：tiscon@example.com</p>
                                     <div class="field" th:classappend="${errors.hasError('emailAddress')} ? 'error'">
-                                        <input type="text" name="emailAddress" th:value="${form.emailAddress}"/>
+                                        <input type="text" name="emailAddress" placeholder="tiscon(半角)" th:value="${form.emailAddress}"/>
+                                        @<input type="text" name="emailAddress"placeholder="example.com(半角)" th:value="${form.emailAddress}"/>
                                         <p th:if="${errors.hasError('emailAddress')}"
                                            th:text="${errors.getMessage('emailAddress')}" class="error-message">
                                         </p>
